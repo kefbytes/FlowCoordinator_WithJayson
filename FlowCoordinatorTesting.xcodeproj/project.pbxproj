@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		94198DF5269F268600385AF9 /* DashboardVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94198DF4269F268600385AF9 /* DashboardVC.swift */; };
+		94198DFD269F269500385AF9 /* DashboardVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94198DFC269F269500385AF9 /* DashboardVM.swift */; };
+		94198E02269F28D900385AF9 /* FlowCoordinatorFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94198E01269F28D900385AF9 /* FlowCoordinatorFactory.swift */; };
+		94198E08269F2BF000385AF9 /* NavigationEngine.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94198E07269F2BF000385AF9 /* NavigationEngine.swift */; };
 		947C8A6F2698B926002EE804 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 947C8A6E2698B926002EE804 /* AppDelegate.swift */; };
 		947C8A712698B926002EE804 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 947C8A702698B926002EE804 /* SceneDelegate.swift */; };
 		947C8A782698B928002EE804 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 947C8A772698B928002EE804 /* Assets.xcassets */; };
@@ -36,6 +40,10 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		94198DF4269F268600385AF9 /* DashboardVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashboardVC.swift; sourceTree = "<group>"; };
+		94198DFC269F269500385AF9 /* DashboardVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashboardVM.swift; sourceTree = "<group>"; };
+		94198E01269F28D900385AF9 /* FlowCoordinatorFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlowCoordinatorFactory.swift; sourceTree = "<group>"; };
+		94198E07269F2BF000385AF9 /* NavigationEngine.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationEngine.swift; sourceTree = "<group>"; };
 		947C8A6B2698B926002EE804 /* FlowCoordinatorTesting.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FlowCoordinatorTesting.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		947C8A6E2698B926002EE804 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		947C8A702698B926002EE804 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -78,6 +86,23 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		94198DF3269F266400385AF9 /* Dashboard */ = {
+			isa = PBXGroup;
+			children = (
+				94198DF4269F268600385AF9 /* DashboardVC.swift */,
+				94198DFC269F269500385AF9 /* DashboardVM.swift */,
+			);
+			path = Dashboard;
+			sourceTree = "<group>";
+		};
+		94198E06269F2BD000385AF9 /* Coordinators */ = {
+			isa = PBXGroup;
+			children = (
+				94198E07269F2BF000385AF9 /* NavigationEngine.swift */,
+			);
+			path = Coordinators;
+			sourceTree = "<group>";
+		};
 		947C8A622698B926002EE804 = {
 			isa = PBXGroup;
 			children = (
@@ -101,6 +126,7 @@
 		947C8A6D2698B926002EE804 /* FlowCoordinatorTesting */ = {
 			isa = PBXGroup;
 			children = (
+				94198E06269F2BD000385AF9 /* Coordinators */,
 				947C8AB92698BC96002EE804 /* Factories */,
 				947C8AAA2698BB79002EE804 /* Scenes */,
 				947C8A6E2698B926002EE804 /* AppDelegate.swift */,
@@ -132,6 +158,7 @@
 		947C8AAA2698BB79002EE804 /* Scenes */ = {
 			isa = PBXGroup;
 			children = (
+				94198DF3269F266400385AF9 /* Dashboard */,
 				947C8AAB2698BB89002EE804 /* Login */,
 			);
 			path = Scenes;
@@ -151,6 +178,7 @@
 			children = (
 				947C8ABA2698BCB7002EE804 /* VCFactory.swift */,
 				947C8ABF2698C1EF002EE804 /* VMFactory.swift */,
+				94198E01269F28D900385AF9 /* FlowCoordinatorFactory.swift */,
 			);
 			path = Factories;
 			sourceTree = "<group>";
@@ -285,10 +313,14 @@
 			files = (
 				947C8A6F2698B926002EE804 /* AppDelegate.swift in Sources */,
 				947C8AC02698C1EF002EE804 /* VMFactory.swift in Sources */,
+				94198E02269F28D900385AF9 /* FlowCoordinatorFactory.swift in Sources */,
+				94198DF5269F268600385AF9 /* DashboardVC.swift in Sources */,
 				947C8AAD2698BBAA002EE804 /* LoginVC.swift in Sources */,
+				94198E08269F2BF000385AF9 /* NavigationEngine.swift in Sources */,
 				947C8A712698B926002EE804 /* SceneDelegate.swift in Sources */,
 				947C8AB22698BBC7002EE804 /* LoginVM.swift in Sources */,
 				947C8ABB2698BCB7002EE804 /* VCFactory.swift in Sources */,
+				94198DFD269F269500385AF9 /* DashboardVM.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
