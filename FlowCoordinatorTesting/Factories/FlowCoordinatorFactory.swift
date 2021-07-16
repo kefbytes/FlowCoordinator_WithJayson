@@ -5,12 +5,18 @@
 //  Created by Elayda,Jayson on 7/14/21.
 //
 
-import Foundation
+import UIKit
 
 protocol FlowCoordinatorFactoryProtocol {
-    static func makeAppCoordinator() -> AppCoordinator
+    static func makeAppCoordinator(navigationEngine: NavigationEngineProtocol, window: UIWindow) -> AppCoordinator
+    static func makeLoginCoordinator(navigationEngine: NavigationEngineProtocol, appCoordinator: AppCoordinator) -> LoginCoordinator
 }
 
-class FlowCoordinatorFactory: <#super class#> {
-    <#code#>
+class FlowCoordinatorFactory: FlowCoordinatorFactoryProtocol {
+    static func makeAppCoordinator(navigationEngine: NavigationEngineProtocol, window: UIWindow) -> AppCoordinator {
+        return AppCoordinator(navigationEngine: navigationEngine, window: window)
+    }
+    static func makeLoginCoordinator(navigationEngine: NavigationEngineProtocol, appCoordinator: AppCoordinator) -> LoginCoordinator {
+        return LoginCoordinator(navigationEngine: navigationEngine, appCoordinator: appCoordinator)
+    }
 }
