@@ -31,6 +31,8 @@ class AppCoordinator {
     }
 
     func presentDashboard() {
-        
+        print("Present Dashboard")
+        let dashboardCoordinator = FlowCoordinatorFactory.makeDashboardCoordinator(navigationEngine: engine, appCoordinator: self)
+        dashboardCoordinator.start()
     }
 }

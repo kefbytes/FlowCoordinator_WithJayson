@@ -7,12 +7,19 @@
 
 import Foundation
 
-protocol LoginVMProtocol {
+protocol LoginVMProtocol: VMProtocol {
     func loginWithCredentials()
 }
 
 struct LoginVM: LoginVMProtocol {
+    var appCoordinator: AppCoordinator
+
+    init(appCoordinator: AppCoordinator) {
+        self.appCoordinator = appCoordinator
+    }
+
     func loginWithCredentials() {
         print("loggin in")
+        appCoordinator.presentDashboard()
     }
 }

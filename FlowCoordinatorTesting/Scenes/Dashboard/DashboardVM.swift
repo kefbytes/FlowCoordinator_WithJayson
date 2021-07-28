@@ -7,15 +7,29 @@
 
 import Foundation
 
-protocol DashboardVMProtocol {
+protocol DashboardVMProtocol: VMProtocol {
     func presentDetails()
     func presentSettings()
     func presentTransactionHistory()
 }
 
 struct DashboardVM: DashboardVMProtocol {
+    var appCoordinator: AppCoordinator
+    var dashboardCoordinator: DashboardCoordinator?
+
+    init(appCoordinator: AppCoordinator) {
+        self.appCoordinator = appCoordinator
+    }
+
+    init(appCoordinator: AppCoordinator, dashboardCoordinator: DashboardCoordinator) {
+        self.appCoordinator = appCoordinator
+        self.dashboardCoordinator = dashboardCoordinator
+    }
+
+    
     func presentDetails() {
         print("Going to Details")
+        dashboardCoordinator?.presentDashboardDetails()
     }
 
     func presentSettings() {

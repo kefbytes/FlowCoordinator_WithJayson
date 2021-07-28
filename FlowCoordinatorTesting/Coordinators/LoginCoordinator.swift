@@ -17,7 +17,7 @@ class LoginCoordinator: Coordinator {
     }
 
     func start() {
-        let loginVM = VMFactory.makeLoginVM()
+        let loginVM = VMFactory.makeLoginVM(appCoordinator: coordinator)
         let loginVC = VCFactory.makeLoginVC(viewModel: loginVM)
         engine.push(viewController: loginVC)
     }
