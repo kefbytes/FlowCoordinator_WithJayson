@@ -35,4 +35,9 @@ class AppCoordinator {
         let dashboardCoordinator = FlowCoordinatorFactory.makeDashboardCoordinator(navigationEngine: engine, appCoordinator: self)
         dashboardCoordinator.start()
     }
+
+    func presentSettings() {
+        let settingsCoordinator = FlowCoordinatorFactory.makeSettingsCoordinator(navigationEngine: engine, appCoordinator: self)
+        settingsCoordinator.start()
+    }
 }

@@ -23,4 +23,7 @@ struct VCFactory: VCFactoryProtocol {
     static func makeDashboardDetailsVC(viewModel: DashboardDetailsVMProtocol) -> DashboardDetailsVC {
         return DashboardDetailsVC(viewModel: viewModel)
     }
+    static func makeSettingsVC(viewModel: SettingsVMProtocol) -> SettingsVC {
+        return SettingsVC(viewModel: viewModel)
+    }
 }

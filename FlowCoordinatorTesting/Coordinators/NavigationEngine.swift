@@ -10,13 +10,18 @@ import UIKit
 protocol NavigationEngineProtocol {
     func push(viewController: UIViewController)
     func replace(viewController: UIViewController)
+
+    var context: NavigationEngineContext? { get set }
 }
 
 class NavigationEngine: NavigationEngineProtocol {
     private let navigationController: UINavigationController
+    var context: NavigationEngineContext?
 
     init(navigationController: UINavigationController) {
         self.navigationController = navigationController
+        self.navigationController.navigationBar.barTintColor = .lightGray
+        self.context = NavigationEngineContext(engine: self)
     }
 
     func push(viewController: UIViewController) {

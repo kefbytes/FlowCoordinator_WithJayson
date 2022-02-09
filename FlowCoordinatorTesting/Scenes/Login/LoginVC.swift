@@ -12,6 +12,7 @@ class LoginVC: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.title = "Login"
         view.backgroundColor = .blue
         createLoginButton()
     }

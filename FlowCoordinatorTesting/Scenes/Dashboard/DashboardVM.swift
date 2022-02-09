@@ -34,6 +34,7 @@ struct DashboardVM: DashboardVMProtocol {
 
     func presentSettings() {
         print("Going to Settings")
+        appCoordinator.presentSettings()
     }
 
     func presentTransactionHistory() {

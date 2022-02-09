@@ -10,6 +10,7 @@ import UIKit
 class DashboardCoordinator: Coordinator {
     var engine: NavigationEngineProtocol
     var coordinator: AppCoordinator
+    var context: NavigationEngineContext!
 
     required init(navigationEngine: NavigationEngineProtocol, appCoordinator: AppCoordinator) {
         engine = navigationEngine
@@ -17,14 +18,15 @@ class DashboardCoordinator: Coordinator {
     }
 
     func start() {
-        let dashboardVM = VMFactory.makeDashboardVM(appCoordinator: coordinator)
+        context = engine.context
+        let dashboardVM = VMFactory.makeDashboardVM(appCoordinator: coordinator, dashboardCoordinator: self)
         let dashboardVC = VCFactory.makeDashboardVC(viewModel: dashboardVM)
-        engine.push(viewController: dashboardVC)
+        context.push(viewController: dashboardVC)
     }
 
     func presentDashboardDetails() {
         let dashboardDetailsVM = VMFactory.makeDashboardDetailsVM(appCoordinator: coordinator)
         let dashboardDetailsVC = VCFactory.makeDashboardDetailsVC(viewModel: dashboardDetailsVM)
-        engine.push(viewController: dashboardDetailsVC)
+        context.push(viewController: dashboardDetailsVC)
     }
 }

@@ -12,6 +12,7 @@ class DashboardDetailsVC: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.title = "Dashboard Details"
         view.backgroundColor = .green
     }
 

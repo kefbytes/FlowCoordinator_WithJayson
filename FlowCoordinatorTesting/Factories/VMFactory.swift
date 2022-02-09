@@ -9,7 +9,7 @@ import Foundation
 
 protocol VMFactoryProtocol {
     static func makeLoginVM(appCoordinator: AppCoordinator) -> LoginVMProtocol
-    static func makeDashboardVM(appCoordinator: AppCoordinator) -> DashboardVMProtocol
+    static func makeDashboardVM(appCoordinator: AppCoordinator, dashboardCoordinator: DashboardCoordinator) -> DashboardVMProtocol
     static func makeDashboardDetailsVM(appCoordinator: AppCoordinator) -> DashboardDetailsVMProtocol
 }
 
@@ -17,11 +17,13 @@ struct VMFactory: VMFactoryProtocol {
     static func makeLoginVM(appCoordinator: AppCoordinator) -> LoginVMProtocol {
         return LoginVM(appCoordinator: appCoordinator)
     }
-    static func makeDashboardVM(appCoordinator: AppCoordinator) -> DashboardVMProtocol {
-        let dashboardCoordinator = FlowCoordinatorFactory.makeDashboardCoordinator(navigationEngine: appCoordinator.engine, appCoordinator: appCoordinator)
+    static func makeDashboardVM(appCoordinator: AppCoordinator, dashboardCoordinator: DashboardCoordinator) -> DashboardVMProtocol {
         return DashboardVM(appCoordinator: appCoordinator, dashboardCoordinator: dashboardCoordinator)
     }
     static func makeDashboardDetailsVM(appCoordinator: AppCoordinator) -> DashboardDetailsVMProtocol {
         return DashboardDetailsVM(appCoordinator: appCoordinator)
+    }
+    static func makeSettingsVM(appCoordinator: AppCoordinator) -> SettingsVMProtocol {
+        return SettingsVM(appCoordinator: appCoordinator)
     }
 }

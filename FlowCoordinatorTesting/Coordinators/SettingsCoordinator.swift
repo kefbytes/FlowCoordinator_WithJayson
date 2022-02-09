@@ -1,13 +1,13 @@
 //
-//  LoginCoordinator.swift
+//  SettingsCoordinator.swift
 //  FlowCoordinatorTesting
 //
-//  Created by Elayda,Jayson on 7/16/21.
+//  Created by Elayda,Jayson on 8/6/21.
 //
 
 import UIKit
 
-class LoginCoordinator: Coordinator {
+class SettingsCoordinator: Coordinator {
     var engine: NavigationEngineProtocol
     var coordinator: AppCoordinator
     var context: NavigationEngineContext!
@@ -19,8 +19,8 @@ class LoginCoordinator: Coordinator {
 
     func start() {
         context = engine.context
-        let loginVM = VMFactory.makeLoginVM(appCoordinator: coordinator)
-        let loginVC = VCFactory.makeLoginVC(viewModel: loginVM)
-        context.replace(viewController: loginVC)
+        let settingsVM = VMFactory.makeSettingsVM(appCoordinator: coordinator)
+        let settingsVC = VCFactory.makeSettingsVC(viewModel: settingsVM)
+        context.push(viewController: settingsVC)
     }
 }

@@ -22,4 +22,7 @@ class FlowCoordinatorFactory: FlowCoordinatorFactoryProtocol {
     static func makeDashboardCoordinator(navigationEngine: NavigationEngineProtocol, appCoordinator: AppCoordinator) -> DashboardCoordinator {
         return DashboardCoordinator(navigationEngine: navigationEngine, appCoordinator: appCoordinator)
     }
+    static func makeSettingsCoordinator(navigationEngine: NavigationEngineProtocol, appCoordinator: AppCoordinator) -> SettingsCoordinator {
+        return SettingsCoordinator(navigationEngine: navigationEngine, appCoordinator: appCoordinator)
+    }
 }
