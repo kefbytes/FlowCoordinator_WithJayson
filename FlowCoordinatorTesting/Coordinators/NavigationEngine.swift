@@ -15,7 +15,7 @@ protocol NavigationEngineProtocol {
 }
 
 class NavigationEngine: NavigationEngineProtocol {
-    private let navigationController: UINavigationController
+    let navigationController: UINavigationController
     var context: NavigationEngineContext?
 
     init(navigationController: UINavigationController) {

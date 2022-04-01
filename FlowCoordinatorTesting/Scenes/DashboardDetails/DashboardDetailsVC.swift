@@ -25,4 +25,10 @@ class DashboardDetailsVC: UIViewController {
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
+
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewDidDisappear(animated)
+
+        dashboardDetailsVM?.dashboardCoordinator?.context.setNavBarColor(color: .lightGray)
+    }
 }

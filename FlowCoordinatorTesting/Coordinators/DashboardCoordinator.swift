@@ -25,8 +25,9 @@ class DashboardCoordinator: Coordinator {
     }
 
     func presentDashboardDetails() {
-        let dashboardDetailsVM = VMFactory.makeDashboardDetailsVM(appCoordinator: coordinator)
+        let dashboardDetailsVM = VMFactory.makeDashboardDetailsVM(appCoordinator: coordinator, dashboardCoordinator: self)
         let dashboardDetailsVC = VCFactory.makeDashboardDetailsVC(viewModel: dashboardDetailsVM)
+        context.setNavBarColor(color: .purple)
         context.push(viewController: dashboardDetailsVC)
     }
 }

@@ -12,6 +12,8 @@ protocol NavigationEngineContextProtocol {
     func push(viewController: UIViewController)
 
     func replace(viewController: UIViewController)
+
+    func setNavBarColor(color: UIColor)
 }
 
 class NavigationEngineContext: NavigationEngineContextProtocol {
@@ -27,5 +29,9 @@ class NavigationEngineContext: NavigationEngineContextProtocol {
 
     func replace(viewController: UIViewController) {
         navigationEngine.replace(viewController: viewController)
+    }
+
+    func setNavBarColor(color: UIColor = .red) {
+        navigationEngine.navigationController.navigationBar.barTintColor = color
     }
 }
